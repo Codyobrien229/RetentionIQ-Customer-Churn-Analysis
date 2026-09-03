@@ -1,10 +1,16 @@
 # RetentionIQ | Customer Retention & Churn Analysis
 
-**Power BI | Power Query | DAX | Customer Segmentation | Churn Analysis**
+**Power BI | DAX | Power Query | Customer Analytics | Data Visualization**
 
-RetentionIQ is an interactive Power BI analysis of **8,000 telecommunications customers** designed to identify key churn drivers, high-risk customer segments, and actionable retention opportunities.
+RetentionIQ is a Power BI customer retention analysis designed to identify key churn drivers, high-risk customer segments, and actionable retention opportunities.
 
-> **Note:** This project uses a synthetic dataset created for portfolio and educational purposes. No real customer information is used.
+> **Data Note:** This project uses a synthetic dataset created specifically for portfolio analysis. No real customer information is included.
+
+## Interactive Dashboard
+
+**[View the Live Interactive Power BI Dashboard](https://app.fabric.microsoft.com/view?r=eyJrIjoiYmM2ODMxZTAtNzZmNi00MDhmLWE4YzItZDEzM2RhYTIyZWI5IiwidCI6IjA2NDA1NzU5LTQ4YmEtNGYyMi05OTNkLTc3NzY2NjAxMjU0OSJ9&pageName=1f38fcdbbcd09c46357a)**
+
+Explore the dashboard interactively using slicers and cross-filtering to analyze customer churn patterns, high-risk segments, and retention opportunities.
 
 ---
 
@@ -14,251 +20,187 @@ RetentionIQ is an interactive Power BI analysis of **8,000 telecommunications cu
 
 ![RetentionIQ Churn Overview](images/churn_overview.png)
 
-The Churn Overview provides an executive-level view of overall customer churn and examines how churn varies across contract type, internet service, tenure, and monthly charges.
-
 ### Customer Segmentation
 
 ![RetentionIQ Customer Segmentation](images/customer_segmentation.png)
-
-The Customer Segmentation page provides deeper analysis of customer risk patterns using interactive filters, high-risk customer KPIs, payment and support analysis, customer segmentation, and value/risk comparisons.
 
 ---
 
 ## Key Findings
 
-- **30.4% overall churn rate** — 2,435 of 8,000 customers churned.
-
-- **Month-to-month customers had a 43.0% churn rate**, compared with 18.2% for one-year contracts and 10.6% for two-year contracts.
-
-- **Customers within their first 12 months had a 43.0% churn rate**, making early customer tenure a major retention opportunity.
-
-- Customers paying **$100+ per month had a 37.4% churn rate**, compared with 18.6% among customers paying under $40.
-
-- The combination of **0–12 months tenure and $100+ monthly charges had a 48.9% churn rate**, the highest-risk tenure/charge segment identified.
-
-- Customers with **6 support calls had a 50.0% churn rate**, showing a strong association between repeated support interactions and customer churn.
-
-- **Electronic Check customers had a 35.1% churn rate**, the highest among the payment methods analyzed.
+- **Overall churn rate is 30.4%**, representing 2,435 churned customers out of 8,000 total customers.
+- **Monthly revenue associated with churned customers is approximately $201.76K**, highlighting the financial impact of customer attrition.
+- **Month-to-month customers have a 43.0% churn rate**, substantially higher than customers on longer-term contracts.
+- Customers with **0–12 months of tenure have a 43.0% churn rate**, indicating that the earliest stage of the customer relationship is particularly important for retention.
+- Customers paying **$100+ per month have a 37.4% churn rate**, suggesting higher monthly charges are associated with increased churn risk.
+- **Electronic Check customers have the highest churn rate by payment method at 35.1%.**
+- Churn increases alongside repeated support interactions, reaching **50.0% among customers with 6 support calls**.
+- The highest-risk tenure and charge combination is **0–12 months of tenure with $100+ monthly charges**, with a churn rate of **48.9%**.
 
 ---
 
 ## Business Recommendations
 
-1. **Prioritize early-tenure retention**  
-   Develop proactive onboarding and customer check-ins during the first 12 months, when churn is highest.
+1. **Prioritize early-tenure retention efforts.**  
+   Customers within their first 12 months show significantly elevated churn, particularly those with high monthly charges.
 
-2. **Focus on high-charge, early-tenure customers**  
-   Customers with 0–12 months of tenure and monthly charges of $100 or more represent one of the highest-churn segments identified.
+2. **Target high-risk month-to-month customers.**  
+   Encourage longer-term contracts through targeted incentives, loyalty benefits, or personalized retention offers.
 
-3. **Use repeated support activity as a retention signal**  
-   Customers requiring frequent support interactions may benefit from proactive outreach before service issues contribute to churn.
+3. **Use repeated support activity as an early warning signal.**  
+   Customers requiring frequent support show higher churn rates and may benefit from proactive service outreach.
 
-4. **Encourage longer-term contracts**  
-   Evaluate incentives that encourage month-to-month customers to transition to one- or two-year agreements.
+4. **Review the experience of high-charge customers.**  
+   Higher monthly charges are associated with increased churn, suggesting an opportunity to evaluate pricing, perceived value, and service bundles.
 
-5. **Investigate Electronic Check customers further**  
-   Additional analysis could determine whether billing friction, customer characteristics, or other factors contribute to the higher churn observed within this payment group.
+5. **Investigate payment-method friction.**  
+   Electronic Check customers experience the highest churn rate among payment methods and may be a useful segment for targeted retention analysis.
 
 ---
 
 ## Business Problem
 
-A telecommunications company is experiencing customer churn and wants to better understand which customers are leaving, what factors are associated with churn, and which customer segments should be prioritized for retention efforts.
+A telecommunications company is experiencing customer churn and wants to understand:
 
-The analysis was designed to answer several business questions:
+- Which customers are leaving?
+- What factors are associated with churn?
+- Which customer segments demonstrate the greatest retention risk?
+- Where should retention efforts be prioritized?
 
-- How significant is churn across the overall customer base?
-- Which contract types experience the highest churn?
-- How does customer tenure relate to churn?
-- Are customers with higher monthly charges more likely to churn?
-- Are repeated support interactions associated with increased churn?
-- Which customer segments may warrant additional retention attention?
-
-The goal was to transform customer-level data into an interactive Power BI dashboard that allows decision-makers to quickly identify important churn patterns and retention opportunities.
+The goal of this project is to transform customer-level data into an interactive Power BI dashboard that helps decision-makers identify churn patterns and prioritize retention opportunities.
 
 ---
 
 ## Dataset
 
-The analysis uses a synthetic telecommunications customer dataset containing:
+The dataset contains **8,000 fictional telecommunications customers** and 23 fields covering:
 
-- **8,000 customers**
-- **23 fields**
 - Customer demographics
-- Contract information
-- Customer tenure
-- Internet and additional services
+- Tenure
+- Contract type
+- Internet and phone services
 - Monthly and total charges
 - Payment method
 - Support activity
-- Satisfaction score
-- Churn status
+- Satisfaction
+- Customer churn
 
-Each row represents one fictional telecommunications customer.
+Each row represents one customer.
+
+The raw dataset is available in the [`data`](data/) folder.
 
 ---
 
 ## Data Preparation
 
-Data preparation was completed using **Power Query** before building the Power BI report.
+Data preparation was completed in **Power Query** before analysis.
 
-The dataset intentionally included several data-quality issues to simulate a realistic analytics workflow.
+Key cleaning steps included:
 
-Cleaning and transformation included:
+- Standardized inconsistent Contract Type values.
+- Removed leading and trailing spaces from Payment Method.
+- Identified and handled missing Total Charges values.
+- Applied appropriate numeric and text data types.
+- Verified Customer IDs for duplicates.
+- Validated the dataset before building the analytical model.
 
-- Standardizing inconsistent **Contract Type** values
-- Trimming leading and trailing spaces from **Payment Method**
-- Identifying missing **Total Charges** values
-- Imputing missing Total Charges using Monthly Charges and customer tenure
-- Validating and correcting column data types
-- Checking Customer IDs for duplicates
-- Preparing the cleaned dataset for analysis and visualization
+Missing Total Charges values were estimated using Monthly Charges and customer tenure where appropriate.
 
 ---
 
 ## DAX & Data Modeling
 
-DAX was used to create the KPIs, segmentation fields, and business logic used throughout the dashboard.
+DAX measures and calculated columns were created to support churn analysis and customer segmentation.
 
-Core measures included:
+Core measures include:
 
 - Total Customers
 - Churned Customers
 - Churn Rate
 - Monthly Revenue at Risk
-- Average Monthly Charge
 - High-Risk Customers
-- Average Monthly Charge — High Risk
-- Average Tenure — High Risk
-- Average Satisfaction — High Risk
+- Average Monthly Charge
+- Average Tenure
+- Average Satisfaction Score
 
-Calculated columns were also created to segment customers by:
+Calculated columns were also created for:
 
-- **Tenure Band**
-- **Monthly Charge Band**
+- Tenure Band
+- Tenure Band Sort
+- Monthly Charge Band
+- Monthly Charge Band Sort
 
-Numeric sort columns were created to ensure these segments appeared in the correct business order within dashboard visuals.
-
-The complete DAX used in the project is documented here:
-
-[`dax/measures.md`](dax/measures.md)
+The complete DAX documentation is available in [`dax/measures.md`](dax/measures.md).
 
 ---
 
 ## High-Risk Customer Segmentation
 
-A rule-based customer segment was created to identify active customers who may warrant additional retention attention.
+A rule-based high-risk customer segment was created to identify active customers who demonstrate multiple characteristics associated with churn.
 
-A customer was classified as **High Risk** when the customer:
+High-risk customers are defined as:
 
-- Had not already churned
-- Had a month-to-month contract
-- Had a satisfaction score of 3 or lower
-- Had at least 2 support calls in the previous 12 months **or** had tenure of 12 months or less
+- Currently active customers
+- Month-to-month contract
+- Satisfaction score of 3 or lower
+- AND either:
+  - 2 or more support calls in the last 12 months, or
+  - 12 months or less of tenure
 
-This identified a cohort of **286 high-risk customers**.
+This identified **286 active high-risk customers** for potential retention efforts.
 
-Within this group:
-
-- **Average Monthly Charge:** $79.26
-- **Average Tenure:** 24.1 months
-- **Average Satisfaction Score:** 2.86 / 5
-
-> This segmentation is based on defined business rules and descriptive analysis. It is **not a predictive churn or machine-learning model**.
+This segmentation is descriptive and rule-based rather than a predictive machine-learning model.
 
 ---
 
 ## Dashboard Features
 
-The Power BI report includes:
+### Churn Overview
 
-- Executive KPI cards
-- Interactive customer segmentation slicers
-- Churn analysis by contract type
-- Churn analysis by internet service
-- Tenure-based churn analysis
-- Monthly charge analysis
-- Payment method analysis
-- Support call analysis
-- Customer value/risk scatter analysis
-- Tenure and monthly-charge risk segmentation heatmap
-- Conditional formatting
-- Reference lines
-- Cross-filtering between visuals
-- Rule-based high-risk customer KPIs
-- Retention recommendations
+The executive overview provides:
+
+- Total Customers
+- Churned Customers
+- Churn Rate
+- Monthly Revenue at Risk
+- Churn by Contract Type
+- Churn by Internet Service
+- Churn by Tenure
+- Churn by Monthly Charge
+
+### Customer Segmentation
+
+The segmentation page provides:
+
+- Contract Type, Internet Service, and Tenure Band slicers
+- High-risk customer KPIs
+- Churn by Payment Method
+- Churn by Support Calls
+- Customer Value / Risk Analysis
+- Customer Risk Segmentation heatmap
+- Retention priorities based on observed churn patterns
 
 ---
 
 ## Tools & Skills Demonstrated
 
-### Power BI
-- Dashboard development
-- KPI design
-- Interactive slicers
-- Cross-filtering
-- Conditional formatting
-- Reference lines
-- Scatter plots
-- Matrix/heatmap visualization
-- Executive dashboard design
+- **Power BI** — dashboard development and interactive reporting
+- **Power Query** — data cleaning and transformation
+- **DAX** — measures, calculated columns, and customer segmentation
+- **Data Visualization** — KPI cards, bar charts, line charts, scatter plots, and matrix heatmaps
+- **Customer Analytics** — churn analysis and retention segmentation
+- **Business Analysis** — translating analytical findings into actionable recommendations
+- **Data Storytelling** — presenting technical analysis in an executive-friendly format
 
-### Power Query
-- Data cleaning
-- Data transformation
-- Missing-value handling
-- Text standardization
-- Data-type validation
-
-### DAX
-- Measures
-- Calculated columns
-- `CALCULATE`
-- `FILTER`
-- `DIVIDE`
-- `DISTINCTCOUNT`
-- `SWITCH`
-- Customer segmentation
-- KPI development
-
-### Data Analysis
-- Customer churn analysis
-- Customer segmentation
-- Retention analysis
-- KPI development
-- Business insight development
-- Data visualization
-- Business recommendations
-
----
-
-## Repository Structure
-
-```text
-RetentionIQ-Customer-Churn-Analysis/
-│
-├── README.md
-│
-├── data/
-│   └── RetentionIQ_Customer_Churn_Data.csv
-│
-├── dax/
-│   └── measures.md
-│
-└── images/
-    ├── churn_overview.png
-    └── customer_segmentation.png
-```
 
 ---
 
 ## Next Steps
 
-Potential extensions of the project include:
+Potential future enhancements include:
 
-- Incorporating customer lifetime value into retention prioritization
-- Analyzing customer behavior and churn longitudinally with time-series data
-- Evaluating retention campaign performance
-- Conducting deeper analysis of customer support interactions
-- Expanding customer segmentation using additional behavioral characteristics
-- Comparing retention strategies across customer groups
+- Adding additional customer behavior and engagement variables.
+- Comparing churn patterns across more detailed service combinations.
+- Developing additional retention segments based on customer value.
+- Evaluating retention campaign performance if campaign-response data becomes available.
+- Extending the analysis into predictive churn modeling as a separate future project.
