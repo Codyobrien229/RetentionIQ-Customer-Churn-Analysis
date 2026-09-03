@@ -110,3 +110,67 @@ CALCULATE(
     )
 )
 ```
+
+## Customer Segmentation Columns
+
+### Tenure Band
+Groups customers into tenure ranges for retention analysis.
+
+```DAX
+Tenure Band =
+SWITCH(
+    TRUE(),
+    Customers[TenureMonths] <= 12, "0–12 Months",
+    Customers[TenureMonths] <= 24, "13–24 Months",
+    Customers[TenureMonths] <= 36, "25–36 Months",
+    Customers[TenureMonths] <= 48, "37–48 Months",
+    Customers[TenureMonths] <= 60, "49–60 Months",
+    "61–72 Months"
+)
+```
+
+### Tenure Band Sort
+Provides the numeric sort order for the tenure categories.
+
+```DAX
+Tenure Band Sort =
+SWITCH(
+    TRUE(),
+    Customers[TenureMonths] <= 12, 1,
+    Customers[TenureMonths] <= 24, 2,
+    Customers[TenureMonths] <= 36, 3,
+    Customers[TenureMonths] <= 48, 4,
+    Customers[TenureMonths] <= 60, 5,
+    6
+)
+```
+
+### Monthly Charge Band
+Groups customers by monthly spending level.
+
+```DAX
+Monthly Charge Band =
+SWITCH(
+    TRUE(),
+    Customers[MonthlyCharges] < 40, "Under $40",
+    Customers[MonthlyCharges] < 60, "$40–59",
+    Customers[MonthlyCharges] < 80, "$60–79",
+    Customers[MonthlyCharges] < 100, "$80–99",
+    "$100+"
+)
+```
+
+### Monthly Charge Band Sort
+Provides the numeric sort order for monthly charge categories.
+
+```DAX
+Monthly Charge Band Sort =
+SWITCH(
+    TRUE(),
+    Customers[MonthlyCharges] < 40, 1,
+    Customers[MonthlyCharges] < 60, 2,
+    Customers[MonthlyCharges] < 80, 3,
+    Customers[MonthlyCharges] < 100, 4,
+    5
+)
+```
